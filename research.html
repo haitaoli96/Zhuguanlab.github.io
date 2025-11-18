@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research | Zhu Guan Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero" style="height: 140px; background: #111827;"></section>
+
+<main>
+
+  <section class="section-block">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Research Directions</h2>
+        <p class="section-subtitle">
+          Our laboratory focuses on zoonotic protozoan parasites, with particular emphasis on Cryptosporidium, Giardia, and related parasites.
+        </p>
+      </div>
+
+      <div class="research-grid">
+
+        <a class="research-card" href="#drug-targets">
+          <div class="research-thumb" style="background-image: url('images/research1.jpg');"></div>
+          <div class="research-body">
+            <span class="research-tag">Drug targets</span>
+            <h3 class="research-title">Biochemical metabolism &amp; drug development</h3>
+            <p class="research-text">
+              Targeting key metabolic pathways and enzymes in Cryptosporidium and related parasites.
+            </p>
+          </div>
+        </a>
+
+        <a class="research-card" href="#host-parasite">
+          <div class="research-thumb" style="background-image: url('images/research2.jpg');"></div>
+          <div class="research-body">
+            <span class="research-tag">Host–parasite</span>
+            <h3 class="research-title">Host–parasite interaction</h3>
+            <p class="research-text">
+              Dissecting invasion, immune evasion and signaling at the host–parasite interface.
+            </p>
+          </div>
+        </a>
+
+        <a class="research-card" href="#detection">
+          <div class="research-thumb" style="background-image: url('images/research3.jpg');"></div>
+          <div class="research-body">
+            <span class="research-tag">Detection</span>
+            <h3 class="research-title">Oocyst enrichment &amp; detection</h3>
+            <p class="research-text">
+              Developing sensitive and robust methods for environmental and clinical detection.
+            </p>
+          </div>
+        </a>
+
+        <a class="research-card" href="#omics">
+          <div class="research-thumb" style="background-image: url('images/research4.jpg');"></div>
+          <div class="research-body">
+            <span class="research-tag">Omics</span>
+            <h3 class="research-title">Omics-based analysis</h3>
+            <p class="research-text">
+              Integrating genomics, transcriptomics and systems biology to uncover parasite biology.
+            </p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Research Details -->
+      <div class="research-details" style="margin-top: 60px;">
+        
+        <div id="drug-targets" class="research-detail-section">
+          <h3>Biochemical Metabolism & Drug Development</h3>
+          <p>Our research focuses on identifying and validating essential metabolic pathways in Cryptosporidium and related parasites as potential drug targets. We employ biochemical, genetic, and pharmacological approaches to discover novel anti-parasitic compounds.</p>
+        </div>
+
+        <div id="host-parasite" class="research-detail-section">
+          <h3>Host-Parasite Interaction</h3>
+          <p>We study the molecular mechanisms underlying parasite invasion, establishment, and persistence in host cells. Our work aims to understand how these parasites evade host immune responses and identify vulnerabilities that can be targeted for therapeutic intervention.</p>
+        </div>
+
+        <div id="detection" class="research-detail-section">
+          <h3>Oocyst Enrichment & Detection</h3>
+          <p>Developing improved methods for the detection and quantification of Cryptosporidium oocysts in environmental and clinical samples. Our research focuses on enhancing sensitivity, specificity, and throughput of detection platforms.</p>
+        </div>
+
+        <div id="omics" class="research-detail-section">
+          <h3>Omics-based Analysis</h3>
+          <p>Utilizing genomic, transcriptomic, and proteomic approaches to understand parasite biology at a systems level. We integrate multi-omics data to identify key regulatory networks and biological processes essential for parasite survival and pathogenesis.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Guan Lab. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

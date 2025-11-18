@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Team | Zhu Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== Team page only ===== */
+
+    .hero {
+      width: 100%;
+      height: 140px;
+      background: #111827;
+    }
+
+    .section-block {
+      padding: 40px 0 60px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 6px;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    /* ===== Accordion layout ===== */
+    .team-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .team-group {
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+
+    .team-group-header {
+      width: 100%;
+      border: none;
+      background: #f9fafb;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .team-group-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .team-group-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .team-group-meta {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .team-group-icon {
+      font-size: 18px;
+      color: #6b7280;
+      margin-left: 12px;
+    }
+
+    .team-group-body {
+      display: none;
+      padding: 14px 16px 16px;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .team-group.open .team-group-body {
+      display: block;
+    }
+
+    .team-group.open .team-group-icon {
+      transform: rotate(45deg); /* + 变成 x 的感觉 */
+    }
+
+    /* ===== Person cards ===== */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .person-card {
+      display: flex;
+      flex-direction: column;
+      background: #f9fafb;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .person-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+      border-color: #d1d5db;
+    }
+
+    .person-photo-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .person-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .person-body {
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1 1 auto;
+    }
+
+    .person-name {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .person-role {
+      margin: 0;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .person-tags {
+      margin: 6px 0 0;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .person-footer {
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .person-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .person-link:hover {
+      text-decoration: underline;
+    }
+
+    /* In group description */
+    .group-note {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 100px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- ============ Header：保持与你其它页面一致 ============ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <!-- 顶部深色横幅 -->
+  <section class="hero"></section>
+
+  <!-- Team 主体 -->
+  <section class="section-block" id="team">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">
+          The group currently includes 2 principal investigators, 1 postdoctoral fellow,
+          12 PhD candidates and 10 Master students.
+        </p>
+      </div>
+
+      <div class="team-accordion">
+
+        <!-- ====== 1. Principal Investigators ====== -->
+        <article class="team-group open">
+          <button class="team-group-header" type="button">
+            <div class="team-group-header-left">
+              <span class="team-group-title">Principal Investigators</span>
+              <span class="team-group-meta">2 faculty members</span>
+            </div>
+            <span class="team-group-icon">+</span>
+          </button>
+          <div class="team-group-body">
+            <p class="group-note">
+              Principal investigators leading research on zoonotic parasitic diseases,
+              including <em>Cryptosporidium</em>, coccidia and <em>Giardia</em>.
+            </p>
+
+            <div class="team-grid">
+              <!-- Prof. Guan Zhu -->
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <!-- TODO: 替换为真实照片 images/prof_zhu.jpg -->
+                  <img src="images/prof_zhu.jpg" alt="Prof. Guan Zhu" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Prof. Guan Zhu</h3>
+                  <p class="person-role">Professor · PhD Supervisor</p>
+                  <p class="person-tags">
+                    Zoonotic parasitology, <em>Cryptosporidium</em>, coccidia, <em>Giardia</em>,
+                    parasite biology, drug targets and host–parasite interactions.
+                  </p>
+                  <div class="person-footer">
+                    <a href="prof_zhu.html" class="person-link">
+                      View full profile →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Prof. Jigan Yin -->
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <!-- TODO: 替换为真实照片 images/prof_yin.jpg -->
+                  <img src="images/prof_yin.jpg" alt="Prof. Jigan Yin" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Prof. Jigan Yin</h3>
+                  <p class="person-role">Professor · PhD Supervisor</p>
+                  <p class="person-tags">
+                    Veterinary public health, zoonotic cryptosporidiosis, molecular parasitology,
+                    parasite genomics, diagnostics and control.
+                  </p>
+                  <div class="person-footer">
+                    <a href="prof_yin.html" class="person-link">
+                      View full profile →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== 2. Postdoctoral Fellows ====== -->
+        <article class="team-group">
+          <button class="team-group-header" type="button">
+            <div class="team-group-header-left">
+              <span class="team-group-title">Postdoctoral Fellows</span>
+              <span class="team-group-meta">1 current postdoc</span>
+            </div>
+            <span class="team-group-icon">+</span>
+          </button>
+          <div class="team-group-body">
+            <p class="group-note">
+              Postdoctoral researchers working on high-impact projects in parasite genomics,
+              drug discovery and quantitative risk assessment.
+            </p>
+
+            <div class="team-grid">
+              <!-- Dr. Dongqiang Wang -->
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <!-- TODO: 替换为真实照片 images/wang_dongqiang.jpg -->
+                  <img src="images/wang_dongqiang.jpg" alt="Dr. Dongqiang Wang" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Dr. Dongqiang Wang</h3>
+                  <p class="person-role">Postdoctoral Fellow</p>
+                  <p class="person-tags">
+                    Veterinary public health, cryptosporidiosis, molecular parasitology,
+                    drug targets and host–parasite interactions.
+                  </p>
+                  <div class="person-footer">
+                    <a href="wang_dongqiang.html" class="person-link">
+                      View full profile →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== 3. PhD Students ====== -->
+        <article class="team-group">
+          <button class="team-group-header" type="button">
+            <div class="team-group-header-left">
+              <span class="team-group-title">PhD Students</span>
+              <span class="team-group-meta">12 PhD candidates</span>
+            </div>
+            <span class="team-group-icon">+</span>
+          </button>
+          <div class="team-group-body">
+            <p class="group-note">
+              Doctoral students focusing on population genomics, molecular epidemiology,
+              machine-learning–based genotyping and host–parasite interactions.
+              Detailed information will be updated step by step.
+            </p>
+
+            <div class="team-grid">
+              <!-- 这里只放几个占位卡片，后面你可以慢慢补充具体名字和照片 -->
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/phd_placeholder.jpg" alt="PhD Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">PhD Student 1</h3>
+                  <p class="person-role">PhD Candidate</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/phd_placeholder.jpg" alt="PhD Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">PhD Student 2</h3>
+                  <p class="person-role">PhD Candidate</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/phd_placeholder.jpg" alt="PhD Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">PhD Student 3</h3>
+                  <p class="person-role">PhD Candidate</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <a href="students_phd.html" class="person-link">
+                View all PhD students →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ====== 4. Master Students ====== -->
+        <article class="team-group">
+          <button class="team-group-header" type="button">
+            <div class="team-group-header-left">
+              <span class="team-group-title">Master Students</span>
+              <span class="team-group-meta">10 Master students</span>
+            </div>
+            <span class="team-group-icon">+</span>
+          </button>
+          <div class="team-group-body">
+            <p class="group-note">
+              Master students engaged in experimental parasitology, diagnostics,
+              molecular typing and data analysis. More profiles are on the way.
+            </p>
+
+            <div class="team-grid">
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/master_placeholder.jpg" alt="Master Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Master Student 1</h3>
+                  <p class="person-role">Master Student</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/master_placeholder.jpg" alt="Master Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Master Student 2</h3>
+                  <p class="person-role">Master Student</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+
+              <div class="person-card">
+                <div class="person-photo-wrapper">
+                  <img src="images/students/master_placeholder.jpg" alt="Master Student" class="person-photo" />
+                </div>
+                <div class="person-body">
+                  <h3 class="person-name">Master Student 3</h3>
+                  <p class="person-role">Master Student</p>
+                  <p class="person-tags">Research interests: To be updated.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <a href="students_master.html" class="person-link">
+                View all Master students →
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Lab. All rights reserved.
+</footer>
+
+<script>
+  // year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // accordion toggle
+  document.querySelectorAll(".team-group-header").forEach(function(btn) {
+    btn.addEventListener("click", function () {
+      const group = btn.closest(".team-group");
+      group.classList.toggle("open");
+    });
+  });
+</script>
+
+</body>
+</html>

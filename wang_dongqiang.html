@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dr. Dongqiang Wang | Zhu Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ======== Wang Dongqiang page only ======== */
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: flex-start;
+      margin-top: 24px;
+    }
+    .profile-left {
+      flex: 0 0 260px;
+      max-width: 260px;
+    }
+    .profile-photo {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+    .profile-basic-card {
+      margin-top: 16px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .profile-basic-card h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+    .profile-basic-card p {
+      margin: 2px 0;
+      color: #4b5563;
+    }
+
+    .profile-right {
+      flex: 1 1 0;
+      min-width: 280px;
+    }
+
+    /* Header info table */
+    .profile-head-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    .profile-head-table th,
+    .profile-head-table td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 10px;
+    }
+    .profile-head-table th {
+      width: 130px;
+      text-align: right;
+      background: #f9fafb;
+      color: #374151;
+      white-space: nowrap;
+    }
+    .profile-head-table td {
+      color: #111827;
+    }
+
+    /* Tabs */
+    .profile-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+      padding-bottom: 4px;
+    }
+    .profile-tabs button {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      color: #6b7280;
+      border-radius: 999px;
+      transition: all 0.18s ease;
+    }
+    .profile-tabs button:hover {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .profile-tabs button.active {
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    .profile-tab {
+      display: none;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #374151;
+    }
+    .profile-tab.active {
+      display: block;
+    }
+
+    .profile-tab p {
+      margin: 0 0 6px;
+    }
+    .profile-tab ul,
+    .profile-tab ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .profile-tab li {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-left {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .profile-right {
+        flex: 1 1 100%;
+      }
+      .profile-head-table th {
+        width: 35%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- ============ Header (same as other pages) ============ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <!-- Dark hero strip -->
+  <section class="hero" style="height: 140px; background: #111827;"></section>
+
+  <!-- Dr. Dongqiang Wang content -->
+  <section class="section-block" id="wdq">
+    <div class="section-inner">
+
+      <!-- Page title -->
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Dr. Dongqiang Wang</h2>
+          <p class="section-subtitle">
+            Postdoctoral Fellow, Institute of Zoonosis, Jilin University.
+          </p>
+          <p class="section-subtitle">
+            National Key Laboratory for the Diagnosis and Treatment of Severe Zoonotic Infectious Diseases.
+          </p>
+        </div>
+      </div>
+
+      <div class="profile-wrapper">
+        <!-- Left: photo + quick card -->
+        <div class="profile-left">
+          <!-- Put the portrait as images/wang_dongqiang.jpg -->
+          <img src="images/wang_dongqiang.jpg" alt="Dr. Dongqiang Wang" class="profile-photo" />
+
+          <div class="profile-basic-card">
+            <h3>Dongqiang Wang, Ph.D.</h3>
+            <p>Postdoctoral Fellow</p>
+            <p>
+              Veterinary public health · Cryptosporidiosis · Molecular parasitology ·
+              Drug targets and host–parasite interactions.
+            </p>
+            <p>
+              Email:<br />
+              <a href="mailto:wdq19@mails.jlu.edu.cn" style="color:#2563eb;">wdq19@mails.jlu.edu.cn</a><br />
+              <a href="mailto:wangdq909@163.com" style="color:#2563eb;">wangdq909@163.com</a><br />
+              <a href="mailto:wdq909@jlu.edu.cn" style="color:#2563eb;">wdq909@jlu.edu.cn</a>
+            </p>
+            <p>
+              Mobile:<br />
+              +86-188-4412-0994<br />
+              +86-198-4394-6640
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: table + tabs -->
+        <div class="profile-right">
+
+          <!-- Header info table -->
+          <table class="profile-head-table">
+            <tbody>
+            <tr>
+              <th>Name:</th>
+              <td>Dongqiang Wang</td>
+              <th>Gender:</th>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <th>Date of Birth:</th>
+              <td>September 1991</td>
+              <th>Place of Origin:</th>
+              <td>Pingliang, Gansu Province, China</td>
+            </tr>
+            <tr>
+              <th>Discipline:</th>
+              <td>Veterinary Public Health</td>
+              <th>Political Status:</th>
+              <td>Member of the Communist Party of China</td>
+            </tr>
+            <tr>
+              <th>Current Affiliation:</th>
+              <td colspan="3">
+                Institute of Zoonosis, Jilin University;<br />
+                National Key Laboratory for the Diagnosis and Treatment of Severe Zoonotic Infectious Diseases.
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <!-- Tabs -->
+          <div class="profile-tabs">
+            <button type="button" class="active" data-tab="profile">Profile</button>
+            <button type="button" data-tab="education">Education</button>
+            <button type="button" data-tab="publications">Publications</button>
+            <button type="button" data-tab="patents">Patents &amp; Book Chapter</button>
+            <button type="button" data-tab="projects">Research Projects</button>
+          </div>
+
+          <!-- ===== Tab contents ===== -->
+
+          <!-- Profile -->
+          <div class="profile-tab active" id="tab-profile">
+            <p>
+              <strong>Research Interests:</strong>
+              Zoonotic cryptosporidiosis, life cycle and pathogenic mechanisms of
+              apicomplexan parasites, development of molecular diagnostic tools,
+              parasite energy metabolism and novel drug targets.
+            </p>
+            <p><strong>Major Academic Contributions:</strong></p>
+            <ol>
+              <li>
+                In apicomplexan parasites, identified for the first time that the
+                Cryptosporidium micronemal protein CpTSP4 is transported and
+                secreted via microtubule-based kinesin-dependent trafficking, and
+                elucidated its interaction with host cells. This work was published
+                in <em>mBio</em>.
+              </li>
+              <li>
+                Established, for the first time in the Cryptosporidium field, a
+                novel TaqMan qRT-PCR/qPCR assay that enables quantitative
+                determination of oocyst viability for zoonotic
+                <em>Cryptosporidium parvum</em> and <em>C. hominis</em>. This method opens a
+                new avenue for viability assessment of Cryptosporidium oocysts and
+                was published in <em>Water Research</em>.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Education -->
+          <div class="profile-tab" id="tab-education">
+            <p>
+              <strong>09/2012 – 06/2016</strong><br />
+              B.Sc. (Science), Jilin Agricultural Science and Technology College,
+              College of Veterinary Medicine.<br />
+              Major: Animal and Plant Quarantine.
+            </p>
+            <p>
+              <strong>09/2016 – 06/2019</strong><br />
+              M.Sc. (Agriculture), Veterinary Public Health, Institute of Zoonosis,
+              College of Veterinary Medicine, Jilin University.<br />
+              Supervisor: Prof. Jigan Yin.<br />
+              Thesis: <em>
+              “Heparan sulfate–mediated adhesion of Cryptosporidium parvum TSP7
+              protein and sporozoites to HCT-8 cells”
+              </em>.
+            </p>
+            <p>
+              <strong>09/2019 – 06/2024</strong><br />
+              Ph.D. (Agriculture), Veterinary Public Health, Institute of Zoonosis,
+              College of Veterinary Medicine, Jilin University.<br />
+              Supervisor: Prof. Guan Zhu.<br />
+              Thesis: <em>
+              “Intracellular trafficking, secretion and molecular mechanisms of host
+              cell binding of the micronemal protein CpTSP4 in Cryptosporidium parvum”
+              </em>.
+            </p>
+            <p>
+              <strong>07/2024 – present</strong><br />
+              Postdoctoral Fellow, Institute of Zoonosis, Jilin University.
+            </p>
+          </div>
+
+          <!-- Publications -->
+          <div class="profile-tab" id="tab-publications">
+            <h4>First-author papers (English)</h4>
+            <ol>
+              <li>
+                Wang D, Jiang P, Yang X, Zhang J, Chen T, Cacciò S M, Hu M, Yin J, Zhu G.
+                Novel strategy to quantify the viability of oocysts of
+                <em>Cryptosporidium parvum</em> and <em>C. hominis</em>, a risk factor of the
+                waterborne protozoan pathogens of public health concern.
+                <em>Water Research</em>. 2024;258:121788.
+              </li>
+              <li>
+                Wang D, Zhu G.
+                Unlocking the mystery of the feeder organelle and versatile energy
+                metabolism in <em>Cryptosporidium parvum</em>.
+                <em>Trends in Parasitology</em>. 2024;40(4):280–282.
+              </li>
+              <li>
+                Wang D, Jiang P, Wu X, Zhang Y, Wang C, Li M, Liu M, Yin J, Zhu G.
+                Requirement of microtubules for secretion of a micronemal protein
+                CpTSP4 in the invasive stage of the apicomplexan
+                <em>Cryptosporidium parvum</em>. <em>mBio</em>. 2024;15(2):e0315823.
+              </li>
+              <li>
+                Wang D, Wang C, Zhu G.
+                Genomic reconstruction and features of glycosylation pathways in the
+                apicomplexan <em>Cryptosporidium</em> parasites.
+                <em>Frontiers in Molecular Biosciences</em>. 2022;9:1051072.
+              </li>
+            </ol>
+
+            <h4>Co-authored papers (English)</h4>
+            <ol>
+              <li>
+                Wang C, Wang D, Nie J, Gao X, Yin J, Zhu G.
+                Unique tubulin-based structures in the zoonotic apicomplexan
+                parasite <em>Cryptosporidium parvum</em>. <em>Microorganisms</em>. 2021;9(9):1921.
+              </li>
+              <li>
+                Yang B, Wang D, Liu M, Wu X, Yin J, Zhu G.
+                Host cells with transient overexpression of MDR1 as a novel in vitro
+                model for evaluating on-target effect against the epicellular
+                <em>Cryptosporidium</em> parasite. <em>Journal of Antimicrobial Chemotherapy</em>.
+                2021;77(1):124–134.
+              </li>
+              <li>
+                Chen H, Wang D, Wang C, Jiang P, Liu M, Yin J, Yu Y.
+                Lower micromolar activity of antifungal imidazoles on the
+                bacterial-type bifunctional aldehyde/alcohol dehydrogenase (AdhE) in
+                <em>Cryptosporidium parvum</em> and in vitro efficacy against the zoonotic
+                parasite. <em>International Journal for Parasitology: Drugs and Drug Resistance</em>.
+                2024;25:100551.
+              </li>
+              <li>
+                Li M, Yin J, Wang D, Zou B, Zhu G.
+                Targeting translation initiation yields fast-killing therapeutics
+                against the zoonotic parasite <em>Cryptosporidium parvum</em>.
+                <em>PLOS Pathogens</em>. 2025;21(7):e1012881.
+              </li>
+              <li>
+                Liu M, Zhang D, Wang D, Wu X, Zhang Y, Yin J, Zhu G.
+                Cost-effective in vivo and in vitro mouse models for evaluating
+                anti-cryptosporidial drug efficacy: assessing vorinostat, docetaxel
+                and baicalein. <em>Journal of Infectious Diseases</em>. 2023;jiad243.
+              </li>
+              <li>
+                Nie J, Yin J, Wang D, Wang C, Zhu G.
+                Implication of potential differential roles of the two
+                phosphoglucomutase isoforms in the protozoan parasite
+                <em>Cryptosporidium parvum</em>. <em>Pathogens</em>. 2021;11(1):21.
+              </li>
+              <li>
+                Li X, Yin J, Wang D, Gao X, Zhang Y, Wu M, Zhu G.
+                The mucin-like, secretory type-I transmembrane glycoprotein GP900 in
+                the apicomplexan <em>Cryptosporidium parvum</em> is cleaved in the secretory
+                pathway and likely plays a lubrication role. <em>Parasites &amp; Vectors</em>.
+                2022;15(1):170.
+              </li>
+              <li>
+                Gao X, Yin J, Wang D, Li X, Zhang Y, Wang C, Zhang Y, Zhu G.
+                Discovery of new microneme proteins in <em>Cryptosporidium parvum</em> and
+                implication of the roles of a rhomboid membrane protein (CpROM1) in
+                host–parasite interaction. <em>Frontiers in Veterinary Science</em>.
+                2021;8:778560.
+              </li>
+              <li>
+                Yang B, Yan Y, Wang D, Zhang Y, Yin J, Zhu G.
+                On-target inhibition of <em>Cryptosporidium parvum</em> by nitazoxanide (NTZ)
+                and paclitaxel (PTX) validated using a novel MDR1-transgenic host
+                cell model and algorithms to quantify the effect on the parasite
+                target. <em>PLOS Neglected Tropical Diseases</em>. 2023;17(3):e0011217.
+              </li>
+              <li>
+                Zhang T, Gao X, Wang D, Zhao J, Zhang N, Li Q, Zhu G, Yin J.
+                A single-pass type I membrane protein from the apicomplexan parasite
+                <em>Cryptosporidium parvum</em> with nanomolar binding affinity to host cell
+                surface. <em>Microorganisms</em>. 2021;9(5):1015.
+              </li>
+              <li>
+                Zhai Z, Jiang P, Wang D, Chen T, Yin J, Zhu G.
+                Type A asparagine synthetase in the zoonotic
+                <em>Cryptosporidium parvum</em> (CpAsnA): biochemical features and potential
+                as a novel therapeutic target. <em>International Journal for Parasitology:
+                Drugs and Drug Resistance</em>. 2025;28:100601.
+              </li>
+            </ol>
+
+            <h4>Chinese publications</h4>
+            <ol>
+              <li>
+                Wang D, Zhang T, Jiao X, Gao X, Wang H, Yin J.
+                Subcellular localization of type I transmembrane protein Cgd7_1430
+                of <em>Cryptosporidium parvum</em> and its adhesion characteristics to
+                HCT-8 cells. <em>Chinese Journal of Pathogen Biology</em>.
+                2019;14(3):291–297. (in Chinese)
+              </li>
+              <li>
+                Wang D, Zhang T, Gao X, Jiao X, Zhang N, Lu H, Zhu G, Yin J.
+                Heparan-sulfate-mediated adhesion of Cryptosporidium parvum TSP7
+                protein to HCT-8 cells. Abstract, 1st Young Scientists Forum of the
+                Veterinary Parasitology Branch of the Chinese Association of Animal
+                Science and Veterinary Medicine, 2019. (in Chinese)
+              </li>
+            </ol>
+          </div>
+
+          <!-- Patents & Book chapter -->
+          <div class="profile-tab" id="tab-patents">
+            <h4>Patent</h4>
+            <ol>
+              <li>
+                Yin J, Wang D, Zhang T, Jiao X, Shao Q.
+                <strong>TSP7 peptide sequence for detection of
+                  <em>Cryptosporidium parvum</em> and its applications</strong>.<br />
+                China Patent No.: 201810519141.2. Filed 2018-11-06.
+              </li>
+            </ol>
+
+            <h4>Book Chapter / Method</h4>
+            <ol>
+              <li>
+                Wang C, Wang D, Zhang H, Zhu G.
+                Phenotypic high-throughput screening and drug efficacy test against
+                the growth of <em>Cryptosporidium parvum</em> in vitro by qRT-PCR.
+                In: <em>Methods in Molecular Biology</em>. 2026;2978:281–298.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Projects -->
+          <div class="profile-tab" id="tab-projects">
+            <ol>
+              <li>
+                <strong>Interdisciplinary Research Support Program for Doctoral
+                  Students, Jilin University</strong><br />
+                Type: Internal research grant, Jilin University.<br />
+                Funding: 2 (10<sup>4</sup> CNY). Project No.: 101832020DJX094.<br />
+                Role: Principal Investigator.
+              </li>
+              <li>
+                <strong>Source attribution and quantitative risk assessment of
+                  <em>Toxoplasma gondii</em> infection – TOXOSOURCES</strong><br />
+                Type: Intergovernmental International Science and Technology
+                Innovation Cooperation Project, Ministry of Science and Technology
+                of China.<br />
+                Funding: 300 (10<sup>4</sup> CNY). Grant No.: 2022YFE0114400.<br />
+                Role: Participant.
+              </li>
+              <li>
+                <strong>Exploring the bacterial-type lactate dehydrogenase (LDH) as
+                  a novel drug target in the zoonotic <em>Cryptosporidium</em> parasite</strong><br />
+                Type: National Natural Science Foundation of China – Foreign
+                Scientist Grant.<br />
+                Funding: 160 (10<sup>4</sup> CNY). Grant No.: 32250710141.<br />
+                Role: Participant.
+              </li>
+              <li>
+                <strong>Growth, development and parasitic mechanisms of important
+                  animal parasites</strong><br />
+                Type: National Key R&amp;D Program of China (“14th Five-Year Plan”).<br />
+                Funding: 146 (10<sup>4</sup> CNY). Grant No.: 2022YFD1800200.<br />
+                Role: Participant.
+              </li>
+              <li>
+                <strong>Growth, development and parasitic mechanisms of important
+                  animal parasites</strong><br />
+                Type: National Natural Science Foundation of China – Youth Fund.<br />
+                Funding: 30 (10<sup>4</sup> CNY).<br />
+                Role: Principal Investigator.
+              </li>
+            </ol>
+          </div>
+
+        </div><!-- /profile-right -->
+      </div><!-- /profile-wrapper -->
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Lab. All rights reserved.
+</footer>
+
+<script>
+  // year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // tab switching
+  const tabButtons = document.querySelectorAll(".profile-tabs button");
+  const tabMap = {
+    profile: document.getElementById("tab-profile"),
+    education: document.getElementById("tab-education"),
+    publications: document.getElementById("tab-publications"),
+    patents: document.getElementById("tab-patents"),
+    projects: document.getElementById("tab-projects"),
+  };
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.tab;
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      Object.values(tabMap).forEach(p => p.classList.remove("active"));
+      if (tabMap[key]) tabMap[key].classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>

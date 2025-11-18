@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Equipment | Zhu Guan Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <!-- 顶部留一条深色带，与 Publications 一致 -->
+  <section class="hero" style="height: 140px; background: #111827;"></section>
+
+  <!-- Equipment 区块 -->
+  <section class="section-block section-facility" id="facility">
+    <div class="section-inner">
+
+      <!-- 标题区：和 Publications / News 格式一致 -->
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Laboratory environment &amp; equipment</h2>
+          <p class="section-subtitle">
+            Overview of our experimental spaces and major instruments.
+          </p>
+        </div>
+      </div>
+
+      <!-- 两列布局：左实验室环境，右主要仪器 -->
+      <div class="facility-two-cols">
+
+        <!-- 左：实验室环境 -->
+        <div class="facility-block">
+          <h3 class="facility-block-title">Laboratory environment</h3>
+          <img src="images/lab_environment.png"
+               alt="Overview of laboratory environment"
+               class="facility-photo">
+          <p class="facility-caption">
+            Core laboratory space for parasite culture, molecular biology and routine experiments,
+            providing a well-organized and clean environment for daily research.
+          </p>
+        </div>
+
+        <!-- 右：实验室仪器 -->
+        <div class="facility-block">
+          <h3 class="facility-block-title">Major instruments</h3>
+          <img src="images/lab_instruments.png"
+               alt="Overview of major instruments"
+               class="facility-photo">
+          <p class="facility-caption">
+            Major instruments including fluorescence microscopes, protein purification systems,
+            quantitative PCR instruments, flow cytometer and imaging platforms that support
+            Cryptosporidium and Giardia research.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Guan Lab. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

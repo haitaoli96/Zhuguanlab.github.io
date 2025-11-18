@@ -1,0 +1,816 @@
+/* ================================
+   Global base styles
+================================= */
+
+:root {
+  --primary: #2563eb;
+  --bg: #ffffff;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --muted: #6b7280;
+
+  --section-news-bg: #f3f4f6;
+  --section-about-bg: #e0f2fe;
+  --section-contact-bg: #020617;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC",
+               "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================
+   顶部：透明导航 + LOGO（覆盖在 Banner 上）
+================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.4),
+    transparent
+  );
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 左侧：两个 LOGO + 课题组文字 */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(249, 250, 251, 0.8);
+  margin: 0 4px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lab-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f9fafb;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lab-subtitle {
+  font-size: 13px;
+  color: #e5e7eb;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 右侧导航 */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+}
+
+.main-nav a {
+  color: #f9fafb;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.main-nav a:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.65);
+}
+
+.main-nav a.active {
+  border-bottom-color: #ffffff;
+  font-weight: 600;
+}
+
+/* ================================
+   Hero Banner：全屏宽铺满
+================================= */
+
+.hero {
+  width: 100%;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 620px; /* 可根据需要调为 580/600/680 等 */
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  margin-top: 72px; /* 给 header 留出空间，避免遮住图片上部 */
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;      /* 全屏铺满 */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 左右切换箭头 */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 12px;
+  font-size: 34px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  z-index: 5;
+  opacity: 0.85;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-arrow-left {
+  left: 18px;
+}
+
+.hero-arrow-right {
+  right: 18px;
+}
+
+/* 小圆点 */
+
+.hero-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 6;
+}
+
+.hero-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-dot.active {
+  background: #ffffff;
+}
+
+/* ================================
+   通用 Section 布局（仿 IronGroup 横条）
+================================= */
+
+main {
+  background: #ffffff;
+}
+
+.section-block {
+  width: 100%;
+}
+
+
+.section-inner {
+  max-width: 1360px;      /* 原来 1120，可以根据感觉改成 1320 / 1400 */
+  margin: 0 auto;
+  padding: 40px 24px;     /* 想再紧一点可以改成 40px 16px */
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.section-more {
+  font-size: 13px;
+  color: var(--primary);
+}
+
+/* ================================
+   News（首页 + News 页面）
+================================= */
+
+.section-news {
+  background-color: var(--section-news-bg);
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 单条活动：左图 + 右文 */
+
+.news-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+/* 活动缩略图 */
+
+.news-thumb {
+  width: 190px;
+  height: 120px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5e7eb;
+  flex-shrink: 0;
+}
+
+/* 旧的数字圆圈可以不用了，如果不需要可忽略该类 */
+.news-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #111827;
+  display: none; /* 不再显示数字小圆圈 */
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.news-brief {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ================================
+   Research directions
+================================= */
+
+.section-research {
+  background: #ffffff;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+}
+
+.research-thumb {
+  width: 100%;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5e7eb;
+}
+
+.research-body {
+  padding: 12px 14px 14px;
+}
+
+.research-tag {
+  display: inline-block;
+  font-size: 11px;
+  color: #4f46e5;
+  background: #eef2ff;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.research-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.research-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ================================
+   About us
+================================= */
+
+.section-about {
+  background-color: var(--section-about-bg);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 0;
+  object-fit: cover;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+}
+
+/* ================================
+   Contact + Footer（深色）
+================================= */
+
+.section-contact {
+  background-color: var(--section-contact-bg);
+  color: #e5e7eb;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 28px;
+}
+
+.contact-column p {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.contact-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-links {
+  list-style: none;
+}
+
+.contact-links li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.contact-links a {
+  color: #e5e7eb;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* 底部版权栏 */
+
+.site-footer {
+  background: #030712;
+  color: #9ca3af;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px 24px 16px;
+}
+
+/* ================================
+   响应式：适配手机/平板
+================================= */
+
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-logo {
+    height: 42px;
+  }
+
+  .lab-title {
+    font-size: 18px;
+  }
+
+  .lab-subtitle {
+    font-size: 12px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  .hero-slider {
+    height: 360px;
+    margin-top: 72px;
+  }
+
+  .section-inner {
+    padding: 40px 16px;
+  }
+
+  .research-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-thumb {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .hero-slider {
+    height: 260px;
+  }
+
+  .research-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* ==========================================
+   Facility / Equipment 页面优化大图版本
+   - Laboratory Environment 与 Instruments 完全对齐
+   - 更大图片（900px）
+   ========================================== */
+
+.section-facility {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+/* 大标题 */
+.section-facility .section-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* 副标题 */
+.section-facility .section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+}
+
+/* 两列布局（左图右文字 或 上图下文字 均可通用） */
+.facility-two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+/* 小节标题 */
+.facility-block-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* 描述文字 */
+.facility-caption {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-top: 12px;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Facility 两列整体布局，保持大致对齐 */
+.facility-two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: flex-start;   /* 让两列从顶部对齐 */
+  justify-items: center;     /* 每列内容水平居中 */
+}
+
+/* 图片：完整显示，不裁剪 */
+.facility-photo {
+  width: 100%;
+  max-width: 650px;          /* 控制最大宽度，两个区块视觉接近 */
+  height: auto;              /* 关键：高度自适应，保证完整展示 */
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  border: 1px solid rgba(209, 213, 219, 0.8);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.10);
+}
+
+/* 小屏：单列展示，图片仍完整 */
+@media (max-width: 900px) {
+  .facility-two-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facility-photo {
+    max-width: 100%;
+  }
+}
+
+
+/* ===== About us layout ===== */
+.section-about {
+  background: #e3f5ff;
+  padding: 60px 0;
+}
+
+.about-layout {
+  max-width: 1360px;     
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+
+.about-text {
+  flex: 1;
+}
+
+.about-photo-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* 统计数字区域 */
+.about-stats {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 18px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;
+}
+
+.stat-unit {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.stat-label {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #020815;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.footer-top {
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-col-logo {
+  flex: 1.1;
+}
+
+.footer-logo {
+  max-width: 180px;
+  max-height: 50px;
+  margin-bottom: 12px;
+}
+
+.footer-lab-name {
+  color: #cfd8ff;
+  line-height: 1.6;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #cfd8ff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* 版权行 */
+.footer-bottom {
+  background: #000814;
+  padding: 12px 0;
+}
+
+.footer-bottom-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-right {
+  opacity: 0.8;
+}
+
+/* 回到顶部按钮 */
+.button-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0b5ed7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.button-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+

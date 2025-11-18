@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prof. Jigan Yin | Zhu Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ======== Prof. Yin page only ======== */
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: flex-start;
+      margin-top: 24px;
+    }
+    .profile-left {
+      flex: 0 0 260px;
+      max-width: 260px;
+    }
+    .profile-photo {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+    .profile-basic-card {
+      margin-top: 16px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .profile-basic-card h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+    .profile-basic-card p {
+      margin: 2px 0;
+      color: #4b5563;
+    }
+
+    .profile-right {
+      flex: 1 1 0;
+      min-width: 280px;
+    }
+
+    /* Header info table */
+    .profile-head-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    .profile-head-table th,
+    .profile-head-table td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 10px;
+    }
+    .profile-head-table th {
+      width: 130px;
+      text-align: right;
+      background: #f9fafb;
+      color: #374151;
+      white-space: nowrap;
+    }
+    .profile-head-table td {
+      color: #111827;
+    }
+
+    /* Tabs */
+    .profile-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+      padding-bottom: 4px;
+    }
+    .profile-tabs button {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      color: #6b7280;
+      border-radius: 999px;
+      transition: all 0.18s ease;
+    }
+    .profile-tabs button:hover {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .profile-tabs button.active {
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    .profile-tab {
+      display: none;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #374151;
+    }
+    .profile-tab.active {
+      display: block;
+    }
+
+    .profile-tab p {
+      margin: 0 0 6px;
+    }
+    .profile-tab ul,
+    .profile-tab ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .profile-tab li {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-left {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .profile-right {
+        flex: 1 1 100%;
+      }
+      .profile-head-table th {
+        width: 35%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- ============ Header (same as other pages) ============ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <!-- Dark hero strip -->
+  <section class="hero" style="height: 140px; background: #111827;"></section>
+
+  <!-- Prof. Yin content -->
+  <section class="section-block" id="prof-yin">
+    <div class="section-inner">
+
+      <!-- Page title -->
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Prof. Jigan Yin</h2>
+          <p class="section-subtitle">
+            Professor, Institute of Zoonosis &amp; College of Veterinary Medicine, Jilin University.
+          </p>
+        </div>
+      </div>
+
+      <div class="profile-wrapper">
+        <!-- Left: photo + quick card -->
+        <div class="profile-left">
+          <!-- Put the portrait as images/prof_yin.jpg -->
+          <img src="images/prof_yin.jpg" alt="Prof. Jigan Yin" class="profile-photo" />
+
+          <div class="profile-basic-card">
+            <h3>Jigan Yin, Ph.D.</h3>
+            <p>Professor · PhD Supervisor</p>
+            <p>
+              Veterinary public health, zoonotic cryptosporidiosis, molecular
+              parasitology, parasite genomics and diagnostics.
+            </p>
+            <p>
+              Email:<br />
+              <a href="mailto:yinjg@jlu.edu.cn" style="color:#2563eb;">yinjg@jlu.edu.cn</a><br />
+              <a href="mailto:yinjg0924@sina.com" style="color:#2563eb;">yinjg0924@sina.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: table + tabs -->
+        <div class="profile-right">
+
+          <!-- Header info table -->
+          <table class="profile-head-table">
+            <tbody>
+            <tr>
+              <th>Name:</th>
+              <td>Jigan Yin</td>
+              <th>Gender:</th>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <th>Title:</th>
+              <td>Professor</td>
+              <th>Supervisor:</th>
+              <td>PhD supervisor</td>
+            </tr>
+            <tr>
+              <th>Highest Degree:</th>
+              <td>PhD</td>
+              <th>Highest Education:</th>
+              <td>Graduate</td>
+            </tr>
+            <tr>
+              <th>Office Phone:</th>
+              <td>+86-431-87836721</td>
+              <th>Email:</th>
+              <td>
+                yinjg@jlu.edu.cn<br />
+                yinjg0924@sina.com
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <!-- Tabs -->
+          <div class="profile-tabs">
+            <button type="button" class="active" data-tab="profile">Profile</button>
+            <button type="button" data-tab="education">Education</button>
+            <button type="button" data-tab="career">Academic Career</button>
+            <button type="button" data-tab="grants">Research Grants</button>
+            <button type="button" data-tab="publications">Representative Publications</button>
+            <button type="button" data-tab="patents">Patents</button>
+            <button type="button" data-tab="honors">Honors &amp; Awards</button>
+            <button type="button" data-tab="service">Professional Services</button>
+          </div>
+
+          <!-- ===== Tab contents ===== -->
+
+          <!-- Profile -->
+          <div class="profile-tab active" id="tab-profile">
+            <p><strong>Discipline:</strong> Veterinary Public Health</p>
+            <p>
+              <strong>Research Interests:</strong>
+              Zoonotic cryptosporidiosis and other protozoan infections; molecular
+              parasitology and parasite biology; biochemistry and genomics of
+              protozoan parasites; discovery of diagnostic antigens and drug
+              targets; host–parasite interactions.
+            </p>
+            <p><strong>Teaching:</strong></p>
+            <p>Undergraduate: Zoology; Veterinary Parasitology</p>
+            <p>Postgraduate: Veterinary Public Health; Zoonoses</p>
+          </div>
+
+          <!-- Education -->
+          <div class="profile-tab" id="tab-education">
+            <p>09/1988 – 07/1992 &nbsp; B.Sc., PLA University of Veterinary Medicine, China</p>
+            <p>09/1992 – 07/1996 &nbsp; M.Sc., Preventive Veterinary Medicine, PLA Agricultural University, China</p>
+            <p>09/1999 – 07/2003 &nbsp; Ph.D., Preventive Veterinary Medicine, PLA Quartermaster University, China</p>
+            <p>03/2009 – 03/2010 &nbsp; Postdoctoral Fellow, USDA Beltsville Agricultural Research Center, USA</p>
+          </div>
+
+          <!-- Academic career -->
+          <div class="profile-tab" id="tab-career">
+            <p>09/1996 – 09/1999 &nbsp; Teaching Assistant, Department of Military Veterinary Medicine, PLA Agricultural University, China</p>
+            <p>09/1999 – 09/2004 &nbsp; Lecturer, College of Animal Science and Veterinary Medicine, PLA Quartermaster University, China</p>
+            <p>09/2004 – 12/2005 &nbsp; Associate Professor, College of Animal Science and Veterinary Medicine, Jilin University, China</p>
+            <p>01/2006 – 08/2009 &nbsp; Associate Professor, Institute of Zoonosis, Jilin University, China</p>
+            <p>09/2009 – present &nbsp; Professor, Institute of Zoonosis, Jilin University, China</p>
+          </div>
+
+          <!-- Grants -->
+          <div class="profile-tab" id="tab-grants">
+            <ol>
+              <li>
+                <strong>PARADISE – Detection, isolation and evaluation of parasites
+                  (<em>Cryptosporidium</em> and <em>Giardia</em>)</strong><br />
+                Intergovernmental International Science and Technology Innovation
+                Cooperation Project, Ministry of Science and Technology of China.<br />
+                Grant No.: 2022YFE0114500, 09/2022–08/2025.
+              </li>
+              <li>
+                <strong>Recognition, invasion and infection mechanisms of parasites to hosts</strong><br />
+                National Key R&amp;D Program of China (“14th Five-Year Plan”).<br />
+                Grant No.: 2022YFD1800200, 11/2022–12/2025.
+              </li>
+              <li>
+                <strong>Development of a fluorescence quantitative PCR kit for
+                  detection of bovine <em>Cryptosporidium parvum</em></strong><br />
+                Key R&amp;D Project, Jilin Provincial Science and Technology Development
+                Plan.<br />
+                Grant No.: 20220202059N C, 07/2022–06/2025.
+              </li>
+              <li>
+                <strong>Key technologies for control of major bovine diseases in Jilin Province</strong><br />
+                Beef Cattle Special Project, Jilin Provincial Science and Technology
+                Development Plan.<br />
+                Grant No.: YDZJ202203CG ZH 051, 01/2022–12/2024.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Publications -->
+          <div class="profile-tab" id="tab-publications">
+            <ol>
+              <li>
+                Liu M, Zhang D, Wang D, Wu X, Zhang Y, Yin J*, Zhu G*.
+                Cost-effective in vivo and in vitro mouse models for evaluating
+                anti-cryptosporidial drug efficacy: assessing vorinostat, docetaxel
+                and baicalein. <em>Journal of Infectious Diseases</em>. 2023; jiad243.
+              </li>
+              <li>
+                Gao X#, Yin J#, Wang D, Li X, Zhang Y, Wang C, Zhang Y, Zhu G.
+                Discovery of new microneme proteins in <em>Cryptosporidium parvum</em> and
+                implication of the roles of a rhomboid membrane protein (CpROM1) in
+                host–parasite interaction. <em>Frontiers in Veterinary Science</em>.
+                2021;8:778560.
+              </li>
+              <li>
+                Li X#, Yin J#, Wang D, Gao X, Zhang Y, Wu M, Zhu G.
+                The mucin-like, secretory type-I transmembrane glycoprotein GP900 in
+                the apicomplexan <em>Cryptosporidium parvum</em> is cleaved in the secretory
+                pathway and likely plays a lubrication role.
+                <em>Parasites &amp; Vectors</em>. 2022;15(1):170.
+              </li>
+              <li>
+                Zhang T, Gao X, Wang D, Zhao J, Zhang N, Li Q, Zhu G, Yin J*.
+                A single-pass type I membrane protein from the apicomplexan parasite
+                <em>Cryptosporidium parvum</em> with nanomolar binding affinity to the host
+                cell surface. <em>Microorganisms</em>. 2021;9(5):1015.
+              </li>
+              <li>
+                Liu G, Jia L, Shao Q, Lu H, Zhao J, Yin J*.
+                MicroRNA profiling of <em>Neospora caninum</em> tachyzoites (NC-1) using a
+                high-throughput approach. <em>Parasitology Research</em>.
+                2021;120(6):2165–2174.
+              </li>
+              <li>
+                Nie J#, Yin J#, Wang D, Wang C, Zhu G.
+                Implication of potential differential roles of the two
+                phosphoglucomutase isoforms in the protozoan parasite
+                <em>Cryptosporidium parvum</em>. <em>Pathogens</em>. 2021;11(1):21.
+              </li>
+              <li>
+                Liu G, Su Y, Zhou M, Zhao J, Zhang T, Ahmad W, Lu H, Jiang N,
+                Chen Q, Xiang M, Yin J*.
+                Prevalence and molecular characterization of
+                <em>Giardia duodenalis</em> isolates from dairy cattle in northeast China.
+                <em>Experimental Parasitology</em>. 2015;154:20–24.
+              </li>
+              <li>
+                Yin J, Qu G, Cao L, Li Q, Fetterer R, Feng X, Liu Q, Wang G, Qi D,
+                Zhang X, Miramontes E, Jenkins M, Zhang N, Tuo W.
+                Characterization of <em>Neospora caninum</em> microneme protein 10 (NcMIC10)
+                and its potential use as a diagnostic marker for neosporosis.
+                <em>Veterinary Parasitology</em>. 2012;187(1–2):28–35.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Patents -->
+          <div class="profile-tab" id="tab-patents">
+            <ol>
+              <li>
+                Yin J, Wang D, Zhang T, Shao Q, Jiao X.
+                <strong>TSP7 peptide sequence for detection of
+                  <em>Cryptosporidium parvum</em> and its applications</strong>.<br />
+                Patent No.: 201810519141.22. Granted: 2019-11-04.
+              </li>
+              <li>
+                Yin J, Zhang T, Wang D, Shao Q, Jiao X.
+                <strong>TSP4 peptide sequence for detection of
+                  <em>Cryptosporidium parvum</em> and its uses</strong>.<br />
+                Patent No.: 201810513813.9. Granted: 2019-11-24.
+              </li>
+              <li>
+                Xiang M, Yin J, Wang H, Lu H, Jiang N, Chen Q.
+                <strong>Sandwich ELISA for circulating antigens of
+                  <em>Toxoplasma gondii</em></strong>.<br />
+                Patent No.: ZL201010264255.0. Granted: 2013-09-11.
+              </li>
+              <li>
+                Yin J, Gao Y, Xiang M, Jiang N, Lu H, Chen Q.
+                <strong>Recombinant antigen for diagnosis of
+                  <em>Cryptosporidium parvum</em></strong>.<br />
+                Patent No.: ZL201410011922.2. Granted: 2016-04-20.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Honors -->
+          <div class="profile-tab" id="tab-honors">
+            <ol>
+              <li>
+                <strong>Immunodiagnosis and control of zoonotic
+                  <em>Cryptosporidium</em> infection</strong> – Second Prize of Science and
+                Technology of Jilin Province (2013J20021), 3rd contributor.
+              </li>
+              <li>
+                <strong>Mechanisms of immune evasion and pathogenesis of
+                  <em>Plasmodium falciparum</em> and <em>Schistosoma japonicum</em></strong> –
+                First Prize of Science and Technology of Jilin Province (2014Z10002),
+                3rd contributor.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Services -->
+          <div class="profile-tab" id="tab-service">
+            <p>
+              Council Member, Veterinary Parasitology Branch,
+              Chinese Association of Animal Science and Veterinary Medicine.<br />
+              Council Member, Parasitology Branch,
+              Chinese Zoological Society.
+            </p>
+          </div>
+
+        </div><!-- /profile-right -->
+      </div><!-- /profile-wrapper -->
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Lab. All rights reserved.
+</footer>
+
+<script>
+  // year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // tab switching
+  const tabButtons = document.querySelectorAll(".profile-tabs button");
+  const tabMap = {
+    profile: document.getElementById("tab-profile"),
+    education: document.getElementById("tab-education"),
+    career: document.getElementById("tab-career"),
+    grants: document.getElementById("tab-grants"),
+    publications: document.getElementById("tab-publications"),
+    patents: document.getElementById("tab-patents"),
+    honors: document.getElementById("tab-honors"),
+    service: document.getElementById("tab-service"),
+  };
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.tab;
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      Object.values(tabMap).forEach(p => p.classList.remove("active"));
+      if (tabMap[key]) tabMap[key].classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>

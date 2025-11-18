@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Zhu Guan Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header（与 news.html 完全保持一致） -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <img src="images/jlu-logo.png" alt="Jilin University" class="header-logo">
+      <span class="header-divider"></span>
+      <img src="images/skl-logo.png" alt="Lab Logo" class="header-logo">
+      <div class="header-text">
+        <div class="lab-title">Zhu Guan Lab</div>
+        <div class="lab-subtitle">Institute of Zoonosis · Jilin University</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="index.html#research">Research</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="equipment.html">Equipment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero" style="height: 140px; background: #111827;"></section>
+
+<main>
+
+<!-- =============================
+     Contact 主体区域（沿用你的模板）
+================================= -->
+<section class="section-block">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Welcome to visit Jilin University Agriculture Campus</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- 左侧信息卡片 -->
+      <div class="contact-card">
+        <h3 class="contact-heading">Contact Information</h3>
+        <ul class="contact-list">
+          <li><b>Address:</b> 长春市西安大路5333号 吉林大学农学部</li>
+          <li><b>Postal Code:</b> 130062</li>
+          <li><b>Tel:</b> 0431-87836720</li>
+          <li><b>Email:</b> rsghb@126.com</li>
+        </ul>
+      </div>
+
+      <!-- 右侧：与别人一致的 iframe 地图，但保持你页面的卡片风格 -->
+      <div class="contact-card">
+        <h3 class="contact-heading">Map</h3>
+
+        <div style="width:100%;height:300px;border-radius:10px;overflow:hidden;">
+          <iframe 
+            src="https://api.map.baidu.com/lbsapi/getpoint/index.html?latlng=43.8259,125.3265&title=吉林大学农学部&content=长春市西安大路5333号"
+            width="100%"
+            height="300"
+            frameborder="0"
+            style="border:0;">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Zhu Guan Lab. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
